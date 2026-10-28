@@ -1,0 +1,39 @@
+# 凭证与本机配置
+.env
+.env.*
+!.env.example
+!.env.sample
+*.local
+.local/
+.tools/
+*.pem
+*.key
+
+# 依赖、构建与测试产物
+node_modules/
+dist/
+build/
+coverage/
+*.test
+*.out
+__pycache__/
+.venv/
+
+# 运行时数据
+uploads/
+data/
+mysql-data/
+qdrant-data/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+tmp/
+eval/reports/
+eval/private/
+
+# 编辑器与操作系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
