@@ -140,7 +140,7 @@ BASE_URL=http://127.0.0.1:18080 npm run test:browser
 ## 项目规划
 
 - [常驻规则](AGENTS.md)与[工程规范](docs/project-standards.md)
-- [骨架变更与规约](openspec/changes/bootstrap-project-skeleton/specs/project-skeleton/spec.md)
+- [已交付骨架规约](openspec/specs/project-skeleton/spec.md)与[骨架归档](openspec/changes/archive/2026-10-28-bootstrap-project-skeleton/design.md)
 - [完整业务提案](openspec/changes/define-traceable-quiz-platform/proposal.md)、[技术设计](openspec/changes/define-traceable-quiz-platform/design.md)、[后续任务](openspec/changes/define-traceable-quiz-platform/tasks.md)
 - [业务 API 设计](docs/api-contract.md)、[实际机器契约](docs/openapi.json)、[数据模型](docs/data-model.md)
 - [评测设计](docs/evaluation.md)、[开发流程](docs/development.md)、[验证记录](docs/verification.md)、[选题 PDF](docs/小组项目选题说明.pdf)
