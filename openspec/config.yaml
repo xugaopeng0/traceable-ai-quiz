@@ -1,0 +1,38 @@
+schema: spec-driven
+
+context: |
+  Language: zh-CN
+  All artifacts must be written in zh-CN.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+  本仓库是 traceable-ai-quiz，成员为徐焜（生成与工作台）、徐高鹏（自检与评测）。
+  当前只有规划文档，尚未导入教学平台代码；不得把计划能力描述为已实现。
+  React + TypeScript + Vite；Go net/http + database/sql；MySQL 8.4；Qdrant；Docker Compose。
+  浏览器仅访问本站 /api；课程网关仅服务端调用；中文界面，白底红色强调。
+  核心题型仅单选、判断、填空。多选、简答、章节识别、知识点补题和学生作业流程不在首期。
+  MySQL 是权限、来源与发布代次的权威；Qdrant 只存向量与标识类 payload。
+  AI 只生成草稿；教师审核后发布；编辑后重新自检；来源失效阻止发布和导出。
+  OpenSpec 变更先规划再实施；未实施变更不归档，不提前同步为已交付主规约。
+
+rules:
+  proposal:
+    - 明确为什么做、核心范围与非目标；四类规划工件齐全后才进入实施。
+  specs:
+    - 每条 Requirement 至少一组 Scenario，使用四级标题，正文分为前置条件、操作、可观测结果三段。
+    - 变更至少包含参数非法、无权限、资源不存在、依赖不可达四条独立失败 Scenario，写清状态码、错误码和副作用。
+    - 数量、区间、超时和重试上限必须具体，不使用“大量”“较快”等不可验收表述；未测质量基线不得编造。
+  design:
+    - 说明选型与取舍，保持与 Scenario 中的数值和失败行为一致。
+  tasks:
+    - 工程骨架排在清单最前；每项包含负责人、可执行动作与完成验证；未实施不得勾选。
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing

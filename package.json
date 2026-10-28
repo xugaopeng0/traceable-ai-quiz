@@ -1,0 +1,14 @@
+{
+  "name": "traceable-ai-quiz",
+  "version": "0.1.0",
+  "private": true,
+  "description": "可溯源 AI 出题与生成质量评测模块：规划工具",
+  "scripts": {
+    "spec:list": "openspec list",
+    "spec:status": "openspec status --change define-traceable-quiz-platform",
+    "spec:validate": "openspec validate --all --strict"
+  },
+  "devDependencies": {
+    "@fission-ai/openspec": "1.13.1"
+  }
+}
