@@ -5,7 +5,8 @@ context: |
   All artifacts must be written in zh-CN.
   Keep OpenSpec structural headings and SHALL/MUST keywords in English.
   本仓库是 traceable-ai-quiz，成员为徐焜（生成与工作台）、徐高鹏（自检与评测）。
-  当前只有规划文档，尚未导入教学平台代码；不得把计划能力描述为已实现。
+  当前只交付 web/api 可启动骨架；尚未导入教学平台业务代码，不得把计划能力描述为已实现。
+  骨架公开 GET /health、/api/health、/api/openapi.json；健康只表示进程可访问。
   React + TypeScript + Vite；Go net/http + database/sql；MySQL 8.4；Qdrant；Docker Compose。
   浏览器仅访问本站 /api；课程网关仅服务端调用；中文界面，白底红色强调。
   核心题型仅单选、判断、填空。多选、简答、章节识别、知识点补题和学生作业流程不在首期。

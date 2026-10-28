@@ -18,9 +18,11 @@ npm run spec:status
 npm run spec:validate
 ```
 
-项目锁定 OpenSpec 1.13.1；本机工具可用 Node 22.12+ 或兼容的更新版本，依赖安装以 package-lock.json 为准。这里不提供未实现的 npm dev 或 Docker 启动命令。
+项目锁定 OpenSpec 1.13.1；骨架开发工具采用 Node 24+，依赖安装以 package-lock.json 为准。Docker 一键启动及 npm run check 已在 README 说明；业务能力仍按任务逐步引入，不提供未实现的业务运行命令。
 
 OpenSpec 四份规划工件齐全只表示可进入实施，不表示功能实现。当前变更仍放在 changes 中；不要提前归档或把全部增量规约同步成已交付主规约。
+
+骨架单独使用 bootstrap-project-skeleton 变更实施与归档；长期业务变更 define-traceable-quiz-platform 保持活动，仅 1.1 目录骨架任务随本次交付完成。不得把本轮 npm run check 结果当作未来数据库/AI/业务验收。
 
 起草新变更使用 `/opsx-propose` 工作流，在本环境对应 `openspec-propose` 技能；本轮修订沿用已有变更。proposal 写原因与边界，design 写选型与取舍，specs 按能力组织需求及 Scenario，tasks 给出可执行清单且骨架排第一。每个 Scenario 分为“前置条件 / 操作 / 可观测结果”三段，至少分别覆盖参数非法、无权限、资源不存在和依赖不可达；数值写成可验收的数量、区间、状态码和时限。
 

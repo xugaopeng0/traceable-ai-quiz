@@ -2,6 +2,8 @@
 
 ## Context
 
+骨架阶段调整：用户要求仅交付可启动壳并独立归档，已拆出 bootstrap-project-skeleton。当前 web/api 两服务、端口默认 18080、公开 /health、外置配置和 JSON 日志先行；本文件其他业务方案及五服务拓扑仍是后续目标。基础导入必须保留骨架分层入口，不能覆盖为另一套完整实现。
+
 本仓库当前仅有 README、选题 PDF 和规划工具。2026-10-28 只读核对课程仓库，基础版本为 `xugaopeng0/courseproject-smartteachingwebsite@a798813fe06b0657b86e0ab84285adec2fdf2875`；本次没有复制或修改其代码。其受控文件采用 React 19、TypeScript 5、Vite 7、Go 1.26、net/http、database/sql 与 MySQL 驱动；具体补丁版本以导入时锁文件为准，不以这里的主版本替代锁定。
 
 首次提交仅含 README.md 与 .gitignore，后续提交增加常驻规则和工程细则。本次规划提交将选题 PDF、OpenSpec 草案、设计文档和锁定的规划工具共同纳入版本控制，其他成员克隆后可按 README 安装工具并校验；业务代码仍未导入。
@@ -80,7 +82,7 @@ openspec/                       规划和验收依据
 
 ### D8 运行与安全
 
-沿用 web/nginx → api 与独立 worker → MySQL/Qdrant/课程网关的 Compose 拓扑，开发入口 localhost:8080，数据库和 Qdrant 仅内部网络。配置提供模板；实际网关配置只由服务端读取。Cookie 写请求校验 Origin；已有 Bearer 供脚本使用，浏览器不把网关凭证存储到 localStorage。
+沿用 web/nginx → api 与独立 worker → MySQL/Qdrant/课程网关的 Compose 拓扑，骨架入口 localhost:18080（端口可配置），后续完整拓扑入口沿用 .env，数据库和 Qdrant 仅内部网络。配置提供模板；实际网关配置只由服务端读取。Cookie 写请求校验 Origin；已有 Bearer 供脚本使用，浏览器不把网关凭证存储到 localStorage。
 
 正常日志只含请求号、资源 ID、状态、耗时和错误码；候选原始输出放受限存储，默认保留 7 天后清理，审核/自检记录在课程验收期保留。公开仓库只提交脱敏且有权公开的合成评测样本；私有讲义、完整原始响应、真实学生数据不提交。模型输出及讲义片段按文本渲染，Markdown 禁止原始 HTML 和 javascript 链接。
 

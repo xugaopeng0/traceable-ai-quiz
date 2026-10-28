@@ -1,10 +1,10 @@
 # Tasks
 
-本清单为后续实施任务，本轮仅规划，所有复选框保持未完成。负责人：A=徐焜，B=徐高鹏；共同任务由双方审查。完成一个任务必须附其验证结果。
+本清单为完整业务的实施任务。目录骨架拆分至独立 bootstrap-project-skeleton 变更并单独归档；除 1.1 目录任务外，本轮不执行任何业务任务。负责人：A=徐焜，B=徐高鹏；完成任务必须附验证结果。
 
 ## 1. 工程骨架、基础导入与共同契约（W1-2，后续所有阶段的前置）
 
-- [ ] 1.1 A 建立 frontend/src/features/quiz、backend/internal/quiz、scripts、eval、docs 五处工程骨架与模块边界说明；验证五处目录存在、领域接口边界有文档、不包含伪装可用的业务路由。
+- [x] 1.1 A 建立 frontend/src/features/quiz、backend/internal/quiz、scripts、eval、docs 五处工程骨架与模块边界说明；由独立 bootstrap-project-skeleton 交付，目录、分层和无业务入口已验证，证据见 docs/verification.md。
 - [ ] 1.2 共同审查固定课程提交的许可、受控文件与种子公开性，形成 docs/upstream.md 导入清单；验证每个文件的来源哈希与排除理由。
 - [ ] 1.3 A 按清单导入平台基础并连接骨架，保留本仓库规约与历史；验证 Go test/vet、前端构建及登录/班级/讲义基础回归，quiz 入口默认关闭。
 - [ ] 1.4 A 配置功能开关、环境模板和五服务 Compose；验证空环境启动及缺配置明确报错，无默认真实凭证。

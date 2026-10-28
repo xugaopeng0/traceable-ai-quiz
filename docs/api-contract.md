@@ -1,6 +1,6 @@
 # API 与模块协议设计
 
-状态：规划。实现任何新路由前，将本设计转成 `docs/openapi.json` 的 OpenAPI 3.1 契约并通过契约测试。本文件不是可调用接口声明。
+状态：下述业务接口仍为规划，不是可调用声明。当前 docs/openapi.json 只包含已实现的骨架 /health、/api/health、/api/openapi.json；新增业务路由前再将相应设计补入机器契约并通过测试。
 
 ## 通用约定
 

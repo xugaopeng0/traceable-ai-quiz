@@ -1,0 +1,21 @@
+:root { font-family: system-ui, "Microsoft YaHei", sans-serif; color: #242a32; background: #f6f7f9; font-synthesis: none; line-height: 1.5; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1040px; margin: 0 auto; padding: 32px; min-height: 100vh; display: flex; flex-direction: column; }
+header, footer { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+header { padding: 16px 0; border-bottom: 1px solid #dfe2e7; }
+.mark { font-weight: 700; font-size: 16px; }
+.phase { color: #a72c35; background: #f9e9eb; border-radius: 4px; padding: 4px 12px; font-size: 12px; }
+section { background: white; border: 1px solid #e3e6ea; border-top: 4px solid #a72c35; border-radius: 8px; padding: 48px; margin: 48px 0; }
+.eyebrow { color: #a72c35; font-size: 14px; font-weight: 600; margin-top: 0; }
+h1 { font-size: 28px; margin: 16px 0; }
+.intro { font-size: 16px; max-width: 640px; color: #626a75; }
+.status { margin-top: 32px; padding: 16px; background: #f6f7f9; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 14px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #36845a; }
+.pending { background: #8b6e19; }.failed { background: #a72c35; }
+.version { color: #626a75; margin-left: auto; font-size: 12px; }
+.note { color: #626a75; font-size: 12px; margin-top: 16px; }
+button { min-height: 36px; padding: 4px 16px; border: 1px solid #a72c35; color: #a72c35; background: white; border-radius: 4px; cursor: pointer; }
+button:focus-visible { outline: 2px solid #a72c35; outline-offset: 4px; }
+footer { margin-top: auto; color: #626a75; font-size: 12px; padding: 16px 0; }
+@media (max-width: 600px) { main { padding: 16px; } section { padding: 24px; margin: 32px 0; } footer { flex-wrap: wrap; } .version { margin-left: 0; } }

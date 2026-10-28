@@ -1,0 +1,43 @@
+worker_processes 1;
+pid /tmp/nginx.pid;
+error_log /dev/stderr error;
+events { worker_connections 256; }
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+    map $upstream_http_x_request_id $trace_id {
+        "" $request_id;
+        default $upstream_http_x_request_id;
+    }
+    log_format json escape=json '{"event":"http_request","request_id":"$trace_id","method":"$request_method","path":"$uri","status":$status,"duration_seconds":$request_time}';
+    access_log /dev/stdout json;
+    client_body_temp_path /tmp/client;
+    proxy_temp_path /tmp/proxy;
+    fastcgi_temp_path /tmp/fastcgi;
+    uwsgi_temp_path /tmp/uwsgi;
+    scgi_temp_path /tmp/scgi;
+    server_tokens off;
+    server {
+        listen {{.WebPort}};
+        root /usr/share/nginx/html;
+        proxy_connect_timeout {{.ConnectSeconds}}s;
+        proxy_read_timeout {{.ProxySeconds}}s;
+        proxy_send_timeout {{.ProxySeconds}}s;
+        proxy_buffering off;
+        proxy_intercept_errors on;
+        proxy_next_upstream off;
+        error_page 502 503 504 =503 @unavailable;
+        location @unavailable {
+            default_type application/json;
+            add_header X-Request-ID $request_id always;
+            return 503 '{"code":"DEPENDENCY_UNAVAILABLE","message":"API 暂时不可达","request_id":"$request_id"}';
+        }
+        location = / { try_files /index.html =404; }
+        location = /runtime-config.js { alias /tmp/runtime-config.js; add_header Cache-Control no-store; }
+        location /assets/ { try_files $uri =404; }
+        location / {
+            proxy_set_header Host $host;
+            proxy_pass http://{{.APIHost}}:{{.APIPort}};
+        }
+    }
+}

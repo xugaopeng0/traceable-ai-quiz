@@ -1,0 +1,14 @@
+.git
+.env
+.env.*
+!.env.example
+node_modules
+**/node_modules
+**/dist
+**/*.test
+**/*.exe
+tmp
+output
+.tools
+.local
+docs/小组项目选题说明.pdf
